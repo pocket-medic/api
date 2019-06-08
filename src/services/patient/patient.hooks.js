@@ -22,12 +22,17 @@ const updatePatientData = async hook => {
   if (data.length < 2) {
     throw new Error(ERRORS.NO_NEW_PATIENT_DATA);
   }
+
+  if (hook.data.hasOwnProperty('glycemia')) {
+    hook.data.glycemia = { value: hook.data.glycemia, time: (new Date()).getTime() };
+  }
   const existingEntry = await app.service('patient')
     .find({ userId: new ObjectId(hook.data.userId)});
 
   console.dir(existingEntry.total);
 
   if (existingEntry.total) {
+    hook.data.glycemia = [...existingEntry.data[0].glycemia, hook.data.glycemia];
     const updatedEntry = await app.service('patient').update(existingEntry.data[0]._id, hook.data);
     hook.result = updatedEntry;
   }

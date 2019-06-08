@@ -7,6 +7,7 @@ module.exports = function (app) {
   const ObjectId = mongooseClient.Schema.Types.ObjectId;
 
   const { Schema } = mongooseClient;
+
   const patient = new Schema({
     userId: { type: ObjectId, required: true, ref: 'users'},
     dob: { type: Date},
@@ -14,13 +15,18 @@ module.exports = function (app) {
     weight: { type: Number },
     height: { type: Number },
     waist: { type: Number },
-    glycemia: { type: Number },
+    glycemia: [ { 
+      value: { type: Number },
+      time: { type: Date },
+      type: { type: String, default: 'glycemia'}
+    } ], //@TODO move this to a separate collection and reference it
     triglyceride: { type: Number },
     cholesterol: { type: Number },
     systolicBloodPressure: { type: Number },
     familyHistoryOfCardioIncident: { type: Boolean }
   }, {
-    timestamps: true
+    timestamps: true,
+    setDefaultsOnInsert: true
   });
 
   return mongooseClient.model('patient', patient);
