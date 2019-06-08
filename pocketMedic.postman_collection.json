@@ -84,7 +84,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"dob\": \"1991-02-26\",\n\t\"sex\": \"m\",\n\t\"weight\": 91,\n\t\"height\": 161,\n\t\"waist\": 12,\n\t\"glycemia\": 22,\n\t\"triglyceride\": 22,\n\t\"cholesterol\": 313,\n\t\"systolicBloodPressure\": 22,\n\t\"familyHistoryOfCardioIncident\": false\n}"
+					"raw": "{\n\t\"dob\": \"1991-02-26\",\n\t\"sex\": \"m\",\n\t\"weight\": 91,\n\t\"height\": 161,\n\t\"waist\": 12,\n\t\"glycemia\": 22,\n\t\"triglyceride\": 22,\n\t\"hdlCholesterol\": 313,\n\t\"systolicBloodPressure\": 22,\n\t\"familyHistoryOfCardioIncident\": false\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3030/patient",
