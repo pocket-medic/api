@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "d19a7160-e73f-44e2-978c-63804621f626",
+		"name": "pocketMedic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create account",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test@yopmail.com\",\n  \"password\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3030/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"strategy\": \"local\",\n  \"email\": \"test@yopmail.com\",\n  \"password\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3030/authentication",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"authentication"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add Patient Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1Y2ZiYjU0OTE1OWQ0MjE2MTNmYWY3MDYiLCJpYXQiOjE1NTk5OTk4MjEsImV4cCI6MTU2MDA4NjIyMSwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiYW5vbnltb3VzIiwianRpIjoiYWY1ZDYxNzAtOGMyMy00ODlmLWIyZmEtZTBhNjYxZWQyZDcwIn0.hveQq-DO8YZur-q2Vz7cec0K_wtBgUsRwt0U0Zhzj7Y",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dob\": \"1991-02-26\",\n\t\"sex\": \"m\",\n\t\"weight\": 91,\n\t\"height\": 161,\n\t\"waist\": 12,\n\t\"glycemia\": 22,\n\t\"triglyceride\": 22,\n\t\"cholesterol\": 313,\n\t\"systolicBloodPressure\": 22,\n\t\"familyHistoryOfCardioIncident\": false\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3030/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Patient Data",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1Y2ZiYjU0OTE1OWQ0MjE2MTNmYWY3MDYiLCJpYXQiOjE1NTk5OTk4MjEsImV4cCI6MTU2MDA4NjIyMSwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiYW5vbnltb3VzIiwianRpIjoiYWY1ZDYxNzAtOGMyMy00ODlmLWIyZmEtZTBhNjYxZWQyZDcwIn0.hveQq-DO8YZur-q2Vz7cec0K_wtBgUsRwt0U0Zhzj7Y"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sex\": \"m\",\n\t\"weight\": 61\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3030/patient/5cfbc4720746a21861b01d12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"patient",
+						"5cfbc4720746a21861b01d12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

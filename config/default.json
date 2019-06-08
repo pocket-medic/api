@@ -6,6 +6,29 @@
     "default": 10,
     "max": 50
   },
-  "mongodb-accounts": "mongodb://localhost:27017/accounts",
-  "mongodb-patients": "mongodb://localhost:27017/patients"
+  "authentication": {
+    "secret": "9615ed06fcabe1f86b78b3978fd76304696179bfa44bcd6ea628aa84ead5f646161ae1d8744a108f9b67bfeb8f46de2f2655011741d0a75f5fba5eed80e462d5ecc40ab99c29c62ba2bbbd286037f9d79ef3fa0105121b61aa9c05396fdb14301af9c3c7f3c87a4133565e5b2c9f7052ad16a4416f90f9006a7f821bf1f16ee71dd1fb5a20a4a10e800d80071a3898c83012ef9da1440251c1e2a5ba2be80cc52965a1aa53e98788fbc8831da92d3bae1e0f8b93931e581c6788b937f62bbd68b253ac3ad146c4831f0f974fd759bffea05bd03b15c9335917ab517c8143883ca778bf8fbd5d6182ec6a5c3a0bb9aa161559a554b836daa99b3860829398d0fc",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/pocketMedic"
 }
