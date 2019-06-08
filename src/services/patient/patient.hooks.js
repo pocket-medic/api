@@ -24,7 +24,7 @@ const updatePatientData = async hook => {
   }
 
   if (hook.data.hasOwnProperty('glycemia')) {
-    hook.data.glycemia = { value: hook.data.glycemia, time: (new Date()).getTime() };
+    hook.data.glycemia = { value: hook.data.glycemia.value, time: hook.data.glycemia.date };
   }
   const existingEntry = await app.service('patient')
     .find({ userId: new ObjectId(hook.data.userId)});
@@ -34,7 +34,7 @@ const updatePatientData = async hook => {
   if (existingEntry.total) {
     hook.data.glycemia = [...existingEntry.data[0].glycemia, hook.data.glycemia];
     const updatedEntry = await app.service('patient').update(existingEntry.data[0]._id, hook.data);
-    hook.result = updatedEntry;
+    hook.result = Object.assign({}, existingEntry.data[0], updatedEntry);
   }
   return hook;
 };

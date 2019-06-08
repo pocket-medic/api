@@ -15,13 +15,13 @@ module.exports = function (app) {
     weight: { type: Number },
     height: { type: Number },
     waist: { type: Number },
-    glycemia: [ { 
+    glycemia: [ { //@TODO move this to a separate collection and reference it
       value: { type: Number },
       time: { type: Date },
       type: { type: String, default: 'glycemia'}
-    } ], //@TODO move this to a separate collection and reference it
+    } ],
     triglyceride: { type: Number },
-    cholesterol: { type: Number },
+    hdlCholesterol: { type: Number },
     systolicBloodPressure: { type: Number },
     familyHistoryOfCardioIncident: { type: Boolean }
   }, {
