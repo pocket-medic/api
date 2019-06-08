@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"email\": \"test@yopmail.com\",\n  \"password\": \"1234\"\n}"
+					"raw": "{\n  \"email\": \"test2@yopmail.com\",\n  \"password\": \"1234\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3030/users",
@@ -49,7 +49,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"strategy\": \"local\",\n  \"email\": \"test@yopmail.com\",\n  \"password\": \"1234\"\n}"
+					"raw": "{\n  \"strategy\": \"local\",\n  \"email\": \"test2@yopmail.com\",\n  \"password\": \"1234\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3030/authentication",
@@ -84,7 +84,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"dob\": \"1991-02-26\",\n\t\"sex\": \"m\",\n\t\"weight\": 91,\n\t\"height\": 161,\n\t\"waist\": 12,\n\t\"glycemia\": 22,\n\t\"triglyceride\": 22,\n\t\"hdlCholesterol\": 313,\n\t\"systolicBloodPressure\": 22,\n\t\"familyHistoryOfCardioIncident\": false\n}"
+					"raw": "{\n\t\"dob\": \"1974-02-26\",\n\t\"sex\": \"m\",\n\t\"weight\": 91,\n\t\"height\": 181,\n\t\"waist\": 111,\n\t\"glycemia\": {\n\t\t\"value\" : 77,\n\t\t\"date\": \"2019-06-08T21:22:03.593Z\"\n\t},\n\t\"triglyceride\": 2,\n\t\"hdlCholesterol\": 1.1,\n\t\"systolicBloodPressure\": 140,\n\t\"familyHistoryOfCardioIncident\": true\n}"
 				},
 				"url": {
 					"raw": "http://localhost:3030/patient",
@@ -122,10 +122,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"sex\": \"m\",\n\t\"weight\": 61\n}"
+					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:3030/patient/5cfbc4720746a21861b01d12",
+					"raw": "http://localhost:3030/patient/5cfc1360699209266fa8d2b3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -133,7 +133,46 @@
 					"port": "3030",
 					"path": [
 						"patient",
-						"5cfbc4720746a21861b01d12"
+						"5cfc1360699209266fa8d2b3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "algorithms",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOiI1Y2ZiYjU0OTE1OWQ0MjE2MTNmYWY3MDYiLCJpYXQiOjE1NTk5OTk4MjEsImV4cCI6MTU2MDA4NjIyMSwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiYW5vbnltb3VzIiwianRpIjoiYWY1ZDYxNzAtOGMyMy00ODlmLWIyZmEtZTBhNjYxZWQyZDcwIn0.hveQq-DO8YZur-q2Vz7cec0K_wtBgUsRwt0U0Zhzj7Y"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3030/algorithms/5cfbd09d90bc081a72bc63be",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"algorithms",
+						"5cfbd09d90bc081a72bc63be"
 					]
 				}
 			},

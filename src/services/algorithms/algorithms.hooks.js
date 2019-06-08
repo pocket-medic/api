@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const { disallow } = require('feathers-hooks-common');
 const siMS = require('../../algorithms/siMS');
@@ -20,7 +21,6 @@ const calculateSiMS = async hook => {
     status: siMSData.status
   };
 
-  console.dir(hook.results);
   return hook;
 };
 
