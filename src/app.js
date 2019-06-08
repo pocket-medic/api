@@ -36,7 +36,8 @@ app.use('/', express.static(app.get('public')));
 app.configure(express.rest());
 
 
-app.configure(mongoose);
+app.configure(mongoose.accounts);
+app.configure(mongoose.patients);
 
 
 // Configure other middleware (see `middleware/index.js`)

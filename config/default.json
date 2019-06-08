@@ -6,5 +6,6 @@
     "default": 10,
     "max": 50
   },
-  "mongodb": "mongodb://localhost:27017/appUsers"
+  "mongodb-accounts": "mongodb://localhost:27017/accounts",
+  "mongodb-patients": "mongodb://localhost:27017/patients"
 }
