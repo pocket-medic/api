@@ -69,7 +69,7 @@ class siMS {
     let glycemia;
 
     if (Array.isArray(data.glycemia)) {
-      glycemia = data.glycemia[data.glycemia.length - 1].value;
+      glycemia =  data.glycemia[data.glycemia.length - 1] && data.glycemia[data.glycemia.length - 1].value;
     } else {
       glycemia = data.glycemia;
     }
@@ -86,7 +86,7 @@ class siMS {
   calculatePsiMSScore() {
     const {data, ref} = this;
     const {height, triglyceride, systolicBloodPressure, waist, hdlCholesterol} = data;
-    const glycemia = data.glycemia[data.glycemia.length - 1].value;
+    const glycemia = data.glycemia[data.glycemia.length - 1] && data.glycemia[data.glycemia.length - 1].value;
 
     const result = (((2 * waist) / height) + 
     (glycemia / ref.glycemia) + 

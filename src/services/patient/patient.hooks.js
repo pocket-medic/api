@@ -52,7 +52,7 @@ const processInputData = hook => {
 module.exports = {
   before: {
     all: [ authenticate('jwt') ],
-    find: [disallow('external')],
+    find: [],
     get: [],
     create: [getUserObjectId, updatePatientData],
     update: [disallow('external')],
